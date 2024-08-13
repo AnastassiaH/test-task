@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Block } from "../../components/Block/Block";
-import "./Desktop.scss";
+import styles from "./Desktop.module.scss";
 
 export const Desktop = () => {
   const [blocks, setBlocks] = useState([1, 2, 3, 4, 5]);
@@ -101,12 +101,12 @@ export const Desktop = () => {
   };
 
   return (
-    <div className="desktop">
-      <button className="resetButton" onClick={handleReset}>
+    <div className={styles.desktop}>
+      <button className={styles.resetButton} onClick={handleReset}>
         Reset
       </button>
       <div
-        className="blocks"
+        className={styles.blocks}
         style={{ gridTemplateColumns: `repeat(${columnsNum}, 300px)` }}
       >
         {blocks.map((block, index) => (

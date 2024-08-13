@@ -1,5 +1,5 @@
 import Draggable from "react-draggable";
-import "./Block.scss";
+import styles from "./Block.module.scss";
 import { ResizableBox } from "react-resizable";
 
 export const Block = ({
@@ -34,27 +34,27 @@ export const Block = ({
       position={{ x: position.x, y: position.y }}
     >
       <div
-        className="wrapper"
+        className={styles.wrapper}
         onClick={handleClick}
         style={{ opacity: visible ? "100" : "0", zIndex: layer }}
       >
         <ResizableBox
           width={size?.width || 300}
           height={size?.height || 100}
-          handle={<span className="handler" />}
+          handle={<span className={styles.handler} />}
           onResize={onResize}
           ResizeHandleAxis="sw"
         >
-          <div className="block">
+          <div className={styles.block}>
             <span
-              className="blockDelete"
+              className={styles.blockDelete}
               onClick={() => {
                 handleDelete(index);
               }}
             >
               ×
             </span>
-            <div className="blockHeader">Title: {index + 1}</div>
+            <div className={styles.blockHeader}>Title: {index + 1}</div>
           </div>
         </ResizableBox>
       </div>
