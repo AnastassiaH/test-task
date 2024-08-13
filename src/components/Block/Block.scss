@@ -1,0 +1,44 @@
+.wrapper {
+  position: relative;
+  height: max-content;
+  width: max-content;
+}
+
+.block {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f0;
+  border: 1px solid #000;
+}
+
+.blockHeader {
+  text-align: center;
+  height: 20px;
+  border-bottom: 1px solid #000;
+}
+
+.blockDelete {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 10px;
+  height: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.handler {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  transform: translate(-50%, -50%);
+  border-right: 1px solid #000;
+  border-bottom: 1px solid #000;
+  cursor: se-resize;
+}

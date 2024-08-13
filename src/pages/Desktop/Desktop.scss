@@ -1,0 +1,19 @@
+.desktop {
+  padding: 10px;
+  background-color: #727171;
+  height: 100vh;
+}
+
+.blocks {
+  display: grid;
+  gap: 10px;
+  grid-auto-rows: 100px;
+  position: relative;
+}
+
+.resetButton {
+  display: block;
+  width: 180px;
+  height: 30px;
+  margin-bottom: 20px;
+}
