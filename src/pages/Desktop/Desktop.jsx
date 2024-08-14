@@ -5,21 +5,14 @@ import { HomeButton } from "../../components/HomeButton";
 
 export const Desktop = () => {
   const [blocks, setBlocks] = useState([1, 2, 3, 4, 5]);
-  const [sizes, setSizes] = useState([
-    { width: 300, height: 100 },
-    { width: 300, height: 100 },
-    { width: 300, height: 100 },
-    { width: 300, height: 100 },
-    { width: 300, height: 100 },
-  ]);
-  const [positions, setPositions] = useState([
-    { x: 0, y: 0 },
-    { x: 0, y: 0 },
-    { x: 0, y: 0 },
-    { x: 0, y: 0 },
-    { x: 0, y: 0 },
-  ]);
-  const [layers, setLayers] = useState([1, 2, 3, 4, 5]);
+  const [sizes, setSizes] = useState(
+    blocks.map(() => ({ width: 300, height: 100 }))
+  );
+  const [positions, setPositions] = useState(
+    blocks.map(() => ({ x: 0, y: 0 }))
+  );
+
+  const [layers, setLayers] = useState(blocks.map((_, i) => i + 1));
   const [isLoading, setIsLoading] = useState(true);
   const columnsNum = Math.floor(window.innerWidth / 300);
 
