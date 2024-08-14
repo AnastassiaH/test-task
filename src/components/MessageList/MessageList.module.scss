@@ -28,14 +28,10 @@
   overflow: hidden;
   text-overflow: ellipsis;
   width: 40%;
+  text-decoration: underline;
 }
-
-.tableCell:not(:last-child) {
-    text-decoration: underline;
-}
-
-.tableRow:first-child .tableCell {
-    text-decoration: none;
+thead .tableCell {
+  text-decoration: none;
 }
 
 .tableCell:last-child {

@@ -12,17 +12,15 @@ export const MessageList = ({ messages, total }) => {
             <td className={styles.tableCell}>Sum</td>
           </tr>
         </thead>
-        {messages.map((message, index) => (
-          <tr className={styles.tableRow} key={index}>
-            <td className={styles.tableCell}>
-              {message?.x.inputs[0].prev_out.addr}
-            </td>
-            <td className={styles.tableCell}>{message?.x.out[0].addr}</td>
-            <td className={styles.tableCell}>
-              {message?.x.inputs[0].prev_out.value}
-            </td>
-          </tr>
-        ))}
+        <tbody>
+          {[...messages].reverse()?.map((message, index) => (
+            <tr className={styles.tableRow} key={index}>
+              <td className={styles.tableCell}>{message?.from ?? "N/A"}</td>
+              <td className={styles.tableCell}>{message?.to ?? "N/A"}</td>
+              <td className={styles.tableCell}>{message?.amount ?? "N/A"}</td>
+            </tr>
+          ))}
+        </tbody>
       </table>
     </div>
   );
