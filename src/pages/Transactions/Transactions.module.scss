@@ -1,0 +1,38 @@
+.wrapper {
+  padding: 20px;
+}
+
+.buttons{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  border-radius: 24px;
+}
+
+.button {
+  display: block;
+  width: 180px;
+  padding: 10px 0;
+  margin-bottom: 20px;
+  outline: none;
+  border: none;
+  border-radius: 24px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.startButton{
+  background-color: #60be64;
+}
+
+.stopButton {
+  background-color: #d75550;
+}
+
+.resetButton {
+  background-color: #e7b257;;
+}
+
+.error{
+  text-align: center;
+}

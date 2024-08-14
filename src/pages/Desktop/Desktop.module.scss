@@ -1,7 +1,9 @@
 .desktop {
-  padding: 10px;
-  background-color: #727171;
-  height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .blocks {
@@ -14,6 +16,10 @@
 .resetButton {
   display: block;
   width: 180px;
-  height: 30px;
+  padding: 10px 0;
   margin-bottom: 20px;
+  outline: none;
+  border: none;
+  border-radius: 24px;
+  text-transform: uppercase;
 }

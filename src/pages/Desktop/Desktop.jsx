@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Block } from "../../components/Block/Block";
 import styles from "./Desktop.module.scss";
+import { HomeButton } from "../../components/HomeButton";
 
 export const Desktop = () => {
   const [blocks, setBlocks] = useState([1, 2, 3, 4, 5]);
@@ -102,6 +103,7 @@ export const Desktop = () => {
 
   return (
     <div className={styles.desktop}>
+      <HomeButton />
       <button className={styles.resetButton} onClick={handleReset}>
         Reset
       </button>

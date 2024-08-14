@@ -1,0 +1,50 @@
+.messages {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.table {
+  width: 900px;
+  margin: 0 auto;
+  border-spacing: 0;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.tableHead {
+  width: 100%;
+}
+
+.tableRow {
+  width: 100%;
+}
+
+.tableCell {
+  border: 1px solid #000;
+  text-align: center;
+  padding: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 40%;
+}
+
+.tableCell:not(:last-child) {
+    text-decoration: underline;
+}
+
+.tableRow:first-child .tableCell {
+    text-decoration: none;
+}
+
+.tableCell:last-child {
+  width: 20%;
+}
+
+.totalSum {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
