@@ -20,9 +20,11 @@ export const Desktop = () => {
     { x: 0, y: 0 },
   ]);
   const [layers, setLayers] = useState([1, 2, 3, 4, 5]);
+  const [isLoading, setIsLoading] = useState(true);
   const columnsNum = Math.floor(window.innerWidth / 300);
 
   useEffect(() => {
+    setIsLoading(true);
     const prevBlocks = localStorage.getItem("prevBlocks");
 
     if (prevBlocks) {
@@ -46,6 +48,8 @@ export const Desktop = () => {
     if (prevLayers) {
       setLayers(JSON.parse(prevLayers));
     }
+
+    setIsLoading(false);
   }, []);
 
   const handleResize = (index, size) => {
@@ -100,6 +104,10 @@ export const Desktop = () => {
     setLayers(newLayers);
     localStorage.setItem("prevLayers", JSON.stringify(newLayers));
   };
+
+  if (isLoading) {
+    return;
+  }
 
   return (
     <div className={styles.desktop}>
