@@ -63,7 +63,7 @@ export const Desktop = () => {
     localStorage.setItem("prevSizes", JSON.stringify(newSizes));
   };
 
-  const handleDrag = (index, data) => {
+  const handleDragStop = (index, data) => {
     const newPositions = positions.map((el, idx) => {
       if (idx === index) {
         return { x: data.x, y: data.y };
@@ -127,7 +127,7 @@ export const Desktop = () => {
             position={positions[index]}
             key={index}
             index={index}
-            handleDrag={handleDrag}
+            handleDragStop={handleDragStop}
             visible={!!block}
             layer={layers[index]}
             handleLayers={handleLayers}

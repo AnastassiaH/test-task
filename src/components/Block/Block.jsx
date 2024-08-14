@@ -1,6 +1,7 @@
 import Draggable from "react-draggable";
 import styles from "./Block.module.scss";
 import { ResizableBox } from "react-resizable";
+import { useState } from "react";
 
 export const Block = ({
   size,
@@ -8,34 +9,42 @@ export const Block = ({
   index,
   handleResize,
   handleDelete,
-  handleDrag,
+  handleDragStop,
   visible,
   layer,
   handleLayers,
 }) => {
+  const [isDragging, setIsDragging] = useState(false);
   const onResize = (_, { size }) => {
     handleResize(index, size);
   };
 
   const handleStop = (_, data) => {
-    handleDrag(index, data);
+    console.log("stop");
+    setIsDragging(false);
+    handleDragStop(index, data);
   };
 
-  const handleClick = () => {
+  const handleStart = () => {
     handleLayers(index);
+  };
+
+  const handleDrag = () => {
+    setIsDragging(true);
   };
 
   return (
     <Draggable
       cancel="span"
       onStop={handleStop}
-      onStart={handleClick}
+      onStart={handleStart}
+      onDrag={handleDrag}
       grid={[25, 25]}
       position={{ x: position.x, y: position.y }}
     >
       <div
         className={styles.wrapper}
-        onClick={handleClick}
+        onClick={handleStart}
         style={{ opacity: visible ? "100" : "0", zIndex: layer }}
       >
         <ResizableBox
@@ -54,7 +63,15 @@ export const Block = ({
             >
               ×
             </span>
-            <div className={styles.blockHeader}>Title: {index + 1}</div>
+            <div
+              className={
+                isDragging
+                  ? `${styles.blockHeaderActive} ${styles.blockHeader}`
+                  : styles.blockHeader
+              }
+            >
+              Title: {index + 1}
+            </div>
           </div>
         </ResizableBox>
       </div>
